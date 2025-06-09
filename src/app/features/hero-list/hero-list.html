@@ -1,0 +1,13 @@
+@for (hero of heroes(); track hero.id) {
+<app-hero-card [hero]="hero"></app-hero-card>
+}
+<div class="c-list">
+    @for (hero of heroes(); track hero.id) {
+    <app-hero-card (onDelete)="openDeleteDialog($event)" (onEdit)="openEditDialog($event)" [hero]="hero" />
+    } @empty {
+    <div class="c-not-found">
+        <mat-icon class="c-not-found__icon">question_mark</mat-icon>
+        <div>No se han encontrado heroes</div>
+    </div>
+    }
+</div>
