@@ -2,11 +2,11 @@ import { DestroyRef, inject, Injectable } from '@angular/core';
 import { Hero } from '../../types/hero';
 import { Http } from './http';
 import { MatDialog, } from '@angular/material/dialog';
-import { DeletionDialog } from '../features/deletion-dialog/deletion-dialog';
+import { DeletionDialog } from '../components/deletion-dialog/deletion-dialog';
 import { filter, Observable, Subject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { AddEditDialog } from '../features/add-edit-dialog/add-edit-dialog';
+import { AddEditDialog } from '../components/add-edit-dialog/add-edit-dialog';
 import { HeroOptions } from '../../types/heroOptions';
 
 @Injectable({

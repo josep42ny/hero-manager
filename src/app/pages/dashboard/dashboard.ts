@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
-import { HeroList } from '../hero-list/hero-list';
 import { HeroesService } from '../../services/heroes';
-import { Heading } from '../../shared/heading/heading';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { HeroList } from '../../components/hero-list/hero-list';
+import { Heading } from '../../components/heading/heading';
 
 @Component({
   selector: 'app-dashboard',

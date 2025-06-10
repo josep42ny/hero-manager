@@ -1,11 +1,11 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { Hero } from '../../../types/hero';
-import { HeroCard } from '../../shared/hero-card/hero-card';
 import { MatIconModule } from '@angular/material/icon';
 import { HeroesService } from '../../services/heroes';
 import { delay } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { SearchBar } from '../../shared/search-bar/search-bar';
+import { HeroCard } from '../hero-card/hero-card';
+import { SearchBar } from '../search-bar/search-bar';
 
 @Component({
   selector: 'app-hero-list',
