@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { HeroesService } from '../../services/heroes';
+import { HeroesService } from '../../services/heroes-service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HeroList } from '../../components/hero-list/hero-list';

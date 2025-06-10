@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { TitleCasePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { HeroesService } from '../../services/heroes';
+import { HeroesService } from '../../services/heroes-service';
 
 @Component({
   selector: 'app-hero-card',

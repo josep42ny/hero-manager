@@ -1,11 +1,12 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { Hero } from '../../../types/hero';
 import { MatIconModule } from '@angular/material/icon';
-import { HeroesService } from '../../services/heroes';
+import { HeroesService } from '../../services/heroes-service';
 import { delay } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HeroCard } from '../hero-card/hero-card';
 import { SearchBar } from '../search-bar/search-bar';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-hero-list',
@@ -37,7 +38,7 @@ export class HeroList implements OnInit {
   }
 
   protected filterHeroes(name: string): void {
-    this.heroesService.filter({ name: name })
+    this.heroesService.updateHeroes(name);
   }
 
 }

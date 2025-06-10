@@ -1,13 +1,13 @@
 import { DestroyRef, inject, Injectable } from '@angular/core';
 import { Hero } from '../../types/hero';
-import { Http } from './http';
+import { HttpService } from './http-service';
 import { MatDialog, } from '@angular/material/dialog';
 import { DeletionDialog } from '../components/deletion-dialog/deletion-dialog';
 import { filter, Observable, Subject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AddEditDialog } from '../components/add-edit-dialog/add-edit-dialog';
-import { HeroOptions } from '../../types/heroOptions';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class HeroesService {
   private readonly destroy = inject(DestroyRef);
   private readonly dialog = inject(MatDialog);
   private readonly infoBar = inject(MatSnackBar);
-  private readonly http = inject(Http);
+  private readonly http = inject(HttpService);
   private heroes = new Subject<Hero[]>();
 
   constructor() {
@@ -28,12 +28,10 @@ export class HeroesService {
     return this.heroes.asObservable();
   }
 
-  public filter(filter: HeroOptions): void {
-    this.updateHeroes(filter);
-  }
+  public updateHeroes(name?: string): void {
+    const params = new HttpParams().set('name_like', name ?? '');
 
-  public updateHeroes(filter?: HeroOptions): void {
-    this.http.getHeroes(filter)
+    this.http.getHeroes(params)
       .pipe(takeUntilDestroyed(this.destroy))
       .subscribe((heroes) => {
         this.heroes.next(heroes);

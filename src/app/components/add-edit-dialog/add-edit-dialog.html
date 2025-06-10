@@ -12,7 +12,7 @@
 
     <mat-form-field class="c-form__field" appearance="outline" floatLabel="auto">
       <mat-label>Nombre</mat-label>
-      <input matInput formControlName="name" required />
+      <input matInput formControlName="name" />
       @if (form.get('name')?.hasError('required')) {
       <mat-error>Rellena este campo para continuar</mat-error>
       }
@@ -20,7 +20,7 @@
 
     <mat-form-field class="c-form__field" appearance="outline" floatLabel="auto">
       <mat-label>Superpoder</mat-label>
-      <input matInput formControlName="powers" required />
+      <input matInput formControlName="powers" />
       @if (form.get('powers')?.hasError('required')) {
       <mat-error>Rellena este campo para continuar</mat-error>
       }
@@ -28,7 +28,7 @@
 
     <mat-form-field class="c-form__field--full-width" appearance="outline" floatLabel="auto">
       <mat-label>Ciudad</mat-label>
-      <input matInput formControlName="location" required />
+      <input matInput formControlName="location" />
       @if (form.get('location')?.hasError('required')) {
       <mat-error>Rellena este campo para continuar</mat-error>
       }
@@ -36,7 +36,7 @@
 
     <mat-form-field class="c-form__field--full-width" appearance="outline" floatLabel="auto">
       <mat-label>Descripcción</mat-label>
-      <textarea matInput formControlName="description" required></textarea>
+      <textarea matInput formControlName="description"></textarea>
       @if (form.get('description')?.hasError('required')) {
       <mat-error>Rellena este campo para continuar</mat-error>
       }
@@ -44,7 +44,7 @@
 
     <mat-form-field class="c-form__field--full-width" appearance="outline" floatLabel="auto">
       <mat-label>Url de la imagen</mat-label>
-      <input matInput formControlName="imageUrl" required />
+      <input matInput formControlName="imageUrl" />
       @if (form.get('imageUrl')?.hasError('required')) {
       <mat-error>Rellena este campo para continuar</mat-error>
       } @else if (form.get('imageUrl')?.hasError('pattern')) {
@@ -53,7 +53,7 @@
     </mat-form-field>
 
     <div class="c-form__actions c-form__actions--full-width">
-      <mat-checkbox formControlName="terms" required>Acepto los <a href="https://example.com">Terminos y
+      <mat-checkbox formControlName="terms">Acepto los <a href="https://example.com">Terminos y
           Condiciones</a></mat-checkbox>
       <button mat-flat-button type="submit" [disabled]="form.invalid">Guardar cambios</button>
     </div>
