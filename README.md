@@ -8,31 +8,31 @@ To start a local development server:
 
 1. Ensure Node.js LTS version is installed
 
-1. Clone the repository
+2. Clone the repository
 
 ```bash
 git clone https://github.com/josep42ny/hero-manager.git
 ```
 
-1. Navigate into project directory
+3. Navigate into project directory
 
 ```bash
 cd hero-manager
 ```
 
-1. Install NPM packages
+4. Install NPM packages
 
 ```bash
 npm install
 ```
 
-1. Launch mock json database
+5. Launch mock json database
 
 ```bash
 npx json-server mock/db/db.json
 ```
 
-1. Launch local dev server
+6. Launch local dev server
 
 ```bash
 npm start
