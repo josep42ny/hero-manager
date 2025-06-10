@@ -17,7 +17,7 @@ git clone https://github.com/josep42ny/hero-manager.git
 1. Navigate into project directory
 
 ```bash
-cd safechat
+cd hero-manager
 ```
 
 1. Install NPM packages
