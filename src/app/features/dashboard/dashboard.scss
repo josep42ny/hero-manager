@@ -1,0 +1,6 @@
+@use '../../styles/mixins' as *;
+
+.c-add-button {
+  @include flex(center);
+  margin-top: 2rem;
+}

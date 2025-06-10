@@ -1,4 +1,4 @@
-<app-search-bar (onSearch)="sortHeroes($event)"></app-search-bar>
+<app-search-bar (onSearch)="filterHeroes($event)"></app-search-bar>
 
 <div class="c-list">
   @for (hero of heroes(); track hero.id) {

@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeroesService } from '../../services/heroes';
 import { delay } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { SearchBar } from '../../shared/search/search-bar';
+import { SearchBar } from '../../shared/search-bar/search-bar';
 
 @Component({
   selector: 'app-hero-list',
@@ -36,7 +36,7 @@ export class HeroList implements OnInit {
       );
   }
 
-  protected sortHeroes(name: string): void {
+  protected filterHeroes(name: string): void {
     this.heroesService.filter({ name: name })
   }
 

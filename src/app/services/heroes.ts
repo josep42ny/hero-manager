@@ -68,11 +68,11 @@ export class HeroesService {
       });
   }
 
-  public handleAddEdit(hero: Hero | undefined): void {
+  public handleAddEdit(hero: Hero | void): void {
     const dialogReference = this.dialog.open(AddEditDialog, {
       width: 'calc(100% - 2rem)',
       maxWidth: '750px',
-      data: hero
+      data: hero ?? null
     });
 
     dialogReference.afterClosed()

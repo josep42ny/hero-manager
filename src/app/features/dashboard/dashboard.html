@@ -1,3 +1,5 @@
-<!-- <button mat-flat-button (click)="a()"><mat-icon>add</mat-icon>Crear nuevo héroe</button> -->
 <app-heading [title]="title()" [subtitle]="subtitle()"></app-heading>
+<div class="c-add-button">
+  <button mat-flat-button (click)="onAddClick()"><mat-icon>add</mat-icon>Crear nuevo héroe</button>
+</div>
 <app-hero-list></app-hero-list>

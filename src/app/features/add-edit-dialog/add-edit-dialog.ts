@@ -29,16 +29,16 @@ export class AddEditDialog {
   private readonly URL_REGEX: RegExp = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
   private readonly dialogRef = inject(MatDialogRef<AddEditDialog>);
   private readonly formBuilder = inject(FormBuilder);
-  private readonly data = inject<Hero>(MAT_DIALOG_DATA);
+  private readonly data = inject<Hero | null>(MAT_DIALOG_DATA);
 
   constructor() {
     this.form = this.formBuilder.nonNullable.group({
-      id: [this.data.id, Validators.required],
-      name: [this.data.name, Validators.required],
-      description: [this.data.description, Validators.required],
-      location: [this.data.location, Validators.required],
-      powers: [this.data.powers, Validators.required],
-      imageUrl: [this.data.imageUrl, [Validators.required, Validators.pattern(this.URL_REGEX)]],
+      id: [this.data?.id, Validators.required],
+      name: [this.data?.name, Validators.required],
+      description: [this.data?.description, Validators.required],
+      location: [this.data?.location, Validators.required],
+      powers: [this.data?.powers, Validators.required],
+      imageUrl: [this.data?.imageUrl, [Validators.required, Validators.pattern(this.URL_REGEX)]],
       terms: [false, Validators.requiredTrue],
     });
   }
