@@ -1,0 +1,27 @@
+@use '../../styles/mixins' as *;
+
+.c-wrapper {
+  @include flex(center);
+  margin-top: 4rem;
+}
+
+.c-footer {
+  flex: 0 1 1440px;
+  @include flex(center, center, column);
+  gap: 0.5rem;
+  padding: 2rem 0.5rem 4rem;
+  margin: 1rem;
+  color: #777;
+  border-top: 2px solid #e7e7e7;
+
+  &__element {
+    @include flex($align: center)
+  }
+}
+
+@media (min-width: 600px) {
+  .c-footer {
+    @include flex(center, center);
+    justify-content: space-between;
+  }
+}

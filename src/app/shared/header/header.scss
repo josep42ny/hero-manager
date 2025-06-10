@@ -1,0 +1,8 @@
+@use '../../styles/mixins' as *;
+
+.c-header {
+  @include bgPattern();
+  width: 100%;
+  height: 16rem;
+  padding: 1rem 2rem;
+}
