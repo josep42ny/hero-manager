@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -24,36 +24,23 @@ import { Hero } from '../../../types/hero';
 })
 export class AddEditDialog {
 
+  public form: FormGroup;
+  public isEditing = computed<boolean>(() => !!this.data);
   private readonly URL_REGEX: RegExp = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
   private readonly dialogRef = inject(MatDialogRef<AddEditDialog>);
   private readonly formBuilder = inject(FormBuilder);
   private readonly data = inject<Hero>(MAT_DIALOG_DATA);
-  protected readonly isEditing = computed<boolean>(() => !(this.data === undefined));
 
-  protected form: FormGroup = this.formBuilder.nonNullable.group({
-    id: [{ value: -1, disabled: true }, Validators.required],
-    name: [{ value: '', disabled: true }, Validators.required],
-    description: [{ value: '', disabled: true }, Validators.required],
-    location: [{ value: '', disabled: true }, Validators.required],
-    powers: [{ value: '', disabled: true }, Validators.required],
-    imageUrl: [{ value: '', disabled: true }, [Validators.required, Validators.pattern(this.URL_REGEX)]],
-    terms: [{ value: false, disabled: true }, Validators.requiredTrue],
-  });
-
-  ngOnInit(): void {
-    if (this.isEditing()) {
-      this.form.setValue({
-        id: this.data.id,
-        name: this.data.name,
-        description: this.data.description,
-        location: this.data.location,
-        powers: this.data.powers,
-        imageUrl: this.data.imageUrl,
-        terms: false,
-      });
-    }
-
-    this.form.enable();
+  constructor() {
+    this.form = this.formBuilder.nonNullable.group({
+      id: [this.data.id, Validators.required],
+      name: [this.data.name, Validators.required],
+      description: [this.data.description, Validators.required],
+      location: [this.data.location, Validators.required],
+      powers: [this.data.powers, Validators.required],
+      imageUrl: [this.data.imageUrl, [Validators.required, Validators.pattern(this.URL_REGEX)]],
+      terms: [false, Validators.requiredTrue],
+    });
   }
 
   protected submit(): void {
