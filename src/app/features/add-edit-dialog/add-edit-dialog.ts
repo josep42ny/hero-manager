@@ -33,7 +33,7 @@ export class AddEditDialog {
 
   constructor() {
     this.form = this.formBuilder.nonNullable.group({
-      id: [this.data?.id, Validators.required],
+      id: [this.data?.id],
       name: [this.data?.name, Validators.required],
       description: [this.data?.description, Validators.required],
       location: [this.data?.location, Validators.required],

@@ -56,7 +56,7 @@ export class HeroesService {
   public handleDelete(heroId: number): void {
     const dialogReference = this.dialog.open(DeletionDialog, {
       width: 'calc(100% - 2rem)',
-      maxWidth: '500px',
+      maxWidth: '32rem',
     });
 
     dialogReference.afterClosed()
@@ -71,7 +71,7 @@ export class HeroesService {
   public handleAddEdit(hero: Hero | void): void {
     const dialogReference = this.dialog.open(AddEditDialog, {
       width: 'calc(100% - 2rem)',
-      maxWidth: '750px',
+      maxWidth: '58rem',
       data: hero ?? null
     });
 

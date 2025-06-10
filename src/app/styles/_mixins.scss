@@ -6,12 +6,5 @@
 }
 
 @mixin bgPattern() {
-  background-image:
-    radial-gradient(rgb(255, 255, 255) 30%, transparent 30.8%),
-    radial-gradient(rgb(255, 255, 255) 30%, transparent 30.8%),
-    radial-gradient(rgb(0, 0, 0) 30%, transparent 30.8%),
-    radial-gradient(rgb(0, 0, 0) 30%, transparent 30.8%);
-  background-position: 0px 0px, 104px 104px, -10.4px 10.4px, 93.6px 114.4px;
-  background-size: 208px 208px;
-  background-color: rgb(255, 255, 198);
+  background-color: #eee;
 }
