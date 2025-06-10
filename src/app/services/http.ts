@@ -14,4 +14,16 @@ export class Http {
     return this.http.get<Hero[]>(`api/hero`);
   }
 
+  public deleteHero(heroId: number): Observable<void> {
+    return this.http.delete<void>(`api/hero/${heroId}`);
+  }
+
+  public updateHero(hero: Hero): Observable<Hero> {
+    return this.http.put<Hero>(`api/hero/${hero.id}`, hero);
+  }
+
+  public addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(`api/hero`, hero);
+  }
+
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeroList } from '../hero-list/hero-list';
+import { HeroesService } from '../../services/heroes';
 
 @Component({
   selector: 'app-dashboard',

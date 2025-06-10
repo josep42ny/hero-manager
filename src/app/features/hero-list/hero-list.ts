@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { Hero } from '../../../types/hero';
-import { Http } from '../../services/http';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HeroCard } from '../../shared/hero-card/hero-card';
 import { MatIconModule } from '@angular/material/icon';
+import { HeroesService } from '../../services/heroes';
+import { delay } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-hero-list',
@@ -14,25 +15,23 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './hero-list.html',
   styleUrl: './hero-list.scss'
 })
-export class HeroList {
+export class HeroList implements OnInit {
 
-  public readonly http = inject(Http)
   protected heroes = signal<Hero[]>([]);
+  private readonly heroesService = inject(HeroesService);
+  private readonly destroy = inject(DestroyRef);
 
-  constructor() {
-    this.http.getHeroes()
-      .pipe(takeUntilDestroyed())
-      .subscribe((heroes) => {
-        this.heroes.set(heroes);
-      });
+  ngOnInit(): void {
+    this.listenToHeroes();
   }
 
-  protected openDeleteDialog(heroId: number) {
-
-  }
-
-  protected openEditDialog(hero: Hero) {
-
+  private listenToHeroes(): void {
+    this.heroesService.heroesObservable()
+      .pipe(delay(0))
+      .pipe(takeUntilDestroyed(this.destroy))
+      .subscribe(heroes =>
+        this.heroes.set(heroes)
+      );
   }
 
 }

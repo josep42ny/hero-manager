@@ -1,0 +1,21 @@
+<div mat-dialog-title class="c-title">
+    <p>Eliminar héroe</p>
+    <button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+</div>
+
+<mat-dialog-content>
+    <div class="c-warning">
+        <mat-icon>warning</mat-icon>
+        <div>
+            <p><strong>¿Estás seguro de querer eliminar este héroe?</strong>
+                <br>
+                Una vez eliminado no podrás revertir esta acción
+            </p>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="c-actions">
+    <button mat-button mat-dialog-close (click)="dismiss()">Cancelar</button>
+    <button mat-flat-button (click)="confirm()">Si, eliminar</button>
+</mat-dialog-actions>

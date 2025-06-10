@@ -1,52 +1,52 @@
 {
-    "hero": [
-        {
-            "id": 0,
-            "name": "Captain Blaze",
-            "description": "A fearless hero who commands the power of fire and heat.",
-            "location": "Volcanic Ridge",
-            "powers": "Pyrokinesis",
-            "imageUrl": "https://picsum.photos/seed/1/400/300"
-        },
-        {
-            "id": 1,
-            "name": "Shadow Viper",
-            "description": "A stealthy vigilante who strikes from the darkness with lightning speed.",
-            "location": "Neo City''0",
-            "powers": "Invisibility",
-            "imageUrl": "https://picsum.photos/seed/2/400/300"
-        },
-        {
-            "id": 3,
-            "name": "Titanium Fist",
-            "description": "A cybernetic warrior with unmatched strength and an indestructible arm.",
-            "location": "Steel Haven",
-            "powers": "Super",
-            "imageUrl": "https://picsum.photos/seed/3/400/300"
-        },
-        {
-            "id": 5,
-            "name": "Captain Blaze",
-            "description": "A fearless hero who commands the power of fire and heat.",
-            "location": "Volcanic Ridge",
-            "powers": "Pyrokinesis",
-            "imageUrl": "https://picsum.photos/seed/5/400/300"
-        },
-        {
-            "id": 6,
-            "name": "Shadow Viper",
-            "description": "A stealthy vigilante who strikes from the darkness with lightning speed.",
-            "location": "Neo City",
-            "powers": "Invisibility",
-            "imageUrl": "https://picsum.photos/seed/6/400/300"
-        },
-        {
-            "id": 7,
-            "name": "Titanium Fist",
-            "description": "A cybernetic warrior with unmatched strength and an indestructible arm.",
-            "location": "Steel Haven",
-            "powers": "Super",
-            "imageUrl": "https://picsum.photos/seed/7/400/300"
-        }
-    ]
+  "hero": [
+    {
+      "id": 0,
+      "name": "Captain Blaze",
+      "description": "A fearless hero who commands the power of fire and heat.",
+      "location": "Volcanic Ridge",
+      "powers": "Pyrokinesis",
+      "imageUrl": "https://picsum.photos/seed/1/400/300"
+    },
+    {
+      "id": 1,
+      "name": "Shadow Viper",
+      "description": "A stealthy vigilante who strikes from the darkness with lightning speed.",
+      "location": "Neo City",
+      "powers": "Invisibility",
+      "imageUrl": "https://picsum.photos/seed/2/400/300"
+    },
+    {
+      "id": 3,
+      "name": "Titanium Fist",
+      "description": "A cybernetic warrior with unmatched strength and an indestructible arm.",
+      "location": "Steel Haven",
+      "powers": "Super",
+      "imageUrl": "https://picsum.photos/seed/3/400/300"
+    },
+    {
+      "id": 5,
+      "name": "Captain Blaze",
+      "description": "A fearless hero who commands the power of fire and heat.",
+      "location": "Volcanic Ridge",
+      "powers": "Pyrokinesis",
+      "imageUrl": "https://picsum.photos/seed/5/400/300"
+    },
+    {
+      "id": 6,
+      "name": "Shadow Viper",
+      "description": "A stealthy vigilante who strikes from the darkness with lightning speed.",
+      "location": "Neo City",
+      "powers": "Invisibility",
+      "imageUrl": "https://picsum.photos/seed/6/400/300"
+    },
+    {
+      "id": 7,
+      "name": "Titanium Fist",
+      "description": "A cybernetic warrior with unmatched strength and an indestructible arm.",
+      "location": "Steel Haven",
+      "powers": "Super",
+      "imageUrl": "https://picsum.photos/seed/7/400/300"
+    }
+  ]
 }

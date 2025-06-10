@@ -1,0 +1,21 @@
+.c-title,
+.c-actions {
+  display: flex;
+  align-items: center;
+}
+
+
+.c-title {
+  justify-content: space-between;
+}
+
+.c-actions {
+  justify-content: flex-end;
+}
+
+.c-warning {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+}
