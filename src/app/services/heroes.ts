@@ -7,6 +7,7 @@ import { filter, Observable, Subject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AddEditDialog } from '../features/add-edit-dialog/add-edit-dialog';
+import { HeroOptions } from '../../types/heroOptions';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,12 @@ export class HeroesService {
     return this.heroes.asObservable();
   }
 
-  public updateHeroes(): void {
-    this.http.getHeroes()
+  public filter(filter: HeroOptions): void {
+    this.updateHeroes(filter);
+  }
+
+  public updateHeroes(filter?: HeroOptions): void {
+    this.http.getHeroes(filter)
       .pipe(takeUntilDestroyed(this.destroy))
       .subscribe((heroes) => {
         this.heroes.next(heroes);

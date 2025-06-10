@@ -5,12 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeroesService } from '../../services/heroes';
 import { delay } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SearchBar } from '../../shared/search/search-bar';
 
 @Component({
   selector: 'app-hero-list',
   imports: [
     HeroCard,
     MatIconModule,
+    SearchBar,
   ],
   templateUrl: './hero-list.html',
   styleUrl: './hero-list.scss'
@@ -32,6 +34,10 @@ export class HeroList implements OnInit {
       .subscribe(heroes =>
         this.heroes.set(heroes)
       );
+  }
+
+  protected sortHeroes(name: string): void {
+    this.heroesService.filter({ name: name })
   }
 
 }

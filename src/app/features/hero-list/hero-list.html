@@ -1,10 +1,12 @@
+<app-search-bar (onSearch)="sortHeroes($event)"></app-search-bar>
+
 <div class="c-list">
-    @for (hero of heroes(); track hero.id) {
-    <app-hero-card [hero]="hero" />
-    } @empty {
-    <div class="c-not-found">
-        <mat-icon class="c-not-found__icon">question_mark</mat-icon>
-        <div>No se han encontrado heroes</div>
-    </div>
-    }
+  @for (hero of heroes(); track hero.id) {
+  <app-hero-card [hero]="hero" />
+  } @empty {
+  <div class="c-not-found">
+    <mat-icon class="c-not-found__icon">question_mark</mat-icon>
+    <div>No se han encontrado heroes</div>
+  </div>
+  }
 </div>

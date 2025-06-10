@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hero } from '../../types/hero';
+import { HeroOptions } from '../../types/heroOptions';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class Http {
 
   public readonly http = inject(HttpClient);
 
-  public getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(`api/hero`);
+  public getHeroes(filter?: HeroOptions): Observable<Hero[]> {
+    return this.http.get<Hero[]>(`api/hero${filter?.name ? '?name_like=' + filter.name : ''}`);
   }
 
   public deleteHero(heroId: number): Observable<void> {
