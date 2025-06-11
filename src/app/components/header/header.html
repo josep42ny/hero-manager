@@ -1,5 +1,7 @@
 <header class="c-header">
   <a href="https://w2m.com" target="_blank">
-    <img *ngIf="IMAGE" [src]="IMAGE" alt="World 2 meet logo" class="c-header__image">
+    @if (LOGO) {
+    <img [src]="LOGO" alt="World 2 meet logo" class="c-header__image">
+    }
   </a>
 </header>

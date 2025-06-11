@@ -1,6 +1,9 @@
 <mat-card class="c-card" appearance="raised">
 
-  <img mat-card-image class="c-card__image" [src]="hero().imageUrl" alt="Photo of a superhero">
+  <div class="c-card__image-container">
+    <img mat-card-image [ngSrc]="hero().imageUrl" alt="Photo of a superhero" placeholder width="320" height="208"
+      priority>
+  </div>
 
   <mat-card-header>
     <mat-card-title>

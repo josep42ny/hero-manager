@@ -6,7 +6,7 @@
       "description": "A fearless hero who commands the power of fire and heat.",
       "location": "Volcanic Ridge",
       "powers": "Pyrokinesis",
-      "imageUrl": "https://picsum.photos/seed/1/400/300"
+      "imageUrl": "static/1121/400/300"
     },
     {
       "id": 1,
@@ -14,7 +14,7 @@
       "description": "A stealthy vigilante who strikes from the darkness with lightning speed.",
       "location": "Neo City",
       "powers": "Invisibility",
-      "imageUrl": "https://picsum.photos/seed/2/400/300"
+      "imageUrl": "static/1112/400/300"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "A cybernetic warrior with unmatched strength and an indestructible arm.",
       "location": "Steel Haven",
       "powers": "Super",
-      "imageUrl": "https://picsum.photos/seed/3/400/300"
+      "imageUrl": "static/1123/400/300"
     },
     {
       "id": 5,
@@ -30,7 +30,7 @@
       "description": "A fearless hero who commands the power of fire and heat.",
       "location": "Volcanic Ridge",
       "powers": "Pyrokinesis",
-      "imageUrl": "https://picsum.photos/seed/5/400/300"
+      "imageUrl": "static/1125/400/300"
     },
     {
       "id": 6,
@@ -38,7 +38,7 @@
       "description": "A stealthy vigilante who strikes from the darkness with lightning speed.",
       "location": "Neo City",
       "powers": "Invisibility",
-      "imageUrl": "https://picsum.photos/seed/6/400/300"
+      "imageUrl": "static/1126/400/300"
     },
     {
       "id": 7,
@@ -46,7 +46,7 @@
       "description": "A cybernetic warrior with unmatched strength and an indestructible arm.",
       "location": "Steel Haven",
       "powers": "Super",
-      "imageUrl": "https://picsum.photos/seed/7/400/300"
+      "imageUrl": "static/1127/400/300"
     }
   ]
 }
