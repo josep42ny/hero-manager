@@ -35,7 +35,7 @@ export class SearchBar implements OnInit {
   ngOnInit(): void {
     this.changeTrigger
       .pipe(takeUntilDestroyed(this.destroyed))
-      .subscribe((value) => {
+      .subscribe((value: string) => {
         this.onSearch.emit(value);
       });
   }

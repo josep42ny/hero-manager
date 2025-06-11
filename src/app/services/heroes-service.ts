@@ -39,7 +39,7 @@ export class HeroesService {
 
   private updateHerosAndShowMessage(message: string): void {
     this.http.getHeroes()
-      .subscribe((heroes) => {
+      .subscribe((heroes: Hero[]) => {
         this.heroes.next(heroes);
         this.infoBar.open(message, "", {
           duration: 2000,
@@ -57,25 +57,25 @@ export class HeroesService {
 
     dialogReference.afterClosed()
       .pipe(takeUntilDestroyed(this.destroy))
-      .subscribe((accepted) => {
+      .subscribe((accepted: boolean) => {
         if (accepted) {
           this.deleteHero(heroId);
         }
       });
   }
 
-  public handleAddEdit(hero: Hero | void): void {
+  public handleAddEdit(hero?: Hero): void {
     const dialogReference = this.dialog.open(AddEditDialog, {
       width: 'calc(100% - 2rem)',
       maxWidth: '58rem',
-      data: hero ?? null
+      data: hero
     });
 
     dialogReference.afterClosed()
-      .pipe(filter(hero1 => !!hero1))
+      .pipe(filter(newHero => !!newHero))
       .pipe(takeUntilDestroyed(this.destroy))
-      .subscribe((hero1) => {
-        hero ? this.editHero(hero1) : this.addHero(hero1);
+      .subscribe((newHero: Hero) => {
+        hero ? this.editHero(newHero) : this.addHero(newHero);
       });
   }
 

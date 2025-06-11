@@ -1,21 +1,19 @@
-.c-title,
-.c-actions {
-  display: flex;
-  align-items: center;
-}
+@use '../../styles/mixins' as *;
 
+.c-actions {
+  @include flex(flex-end, center);
+}
 
 .c-title {
-  justify-content: space-between;
-}
-
-.c-actions {
-  justify-content: flex-end;
+  @include flex(space-between);
 }
 
 .c-warning {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0 2rem;
+  @include flex($align: center, $wrap: wrap, $gap: 0 2rem);
+
+  &__text {
+    &--bold {
+      font-weight: 700;
+    }
+  }
 }

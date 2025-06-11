@@ -7,8 +7,7 @@
 
 .c-footer {
   flex: 0 1 1440px;
-  @include flex(center, center, column);
-  gap: 0.5rem;
+  @include flex(center, center, column, $gap: 0.5rem);
   padding: 2rem 0.5rem 4rem;
   margin: 1rem;
   color: #777;
@@ -21,7 +20,6 @@
 
 @media (min-width: 600px) {
   .c-footer {
-    @include flex(center, center);
-    justify-content: space-between;
+    @include flex(space-between);
   }
 }

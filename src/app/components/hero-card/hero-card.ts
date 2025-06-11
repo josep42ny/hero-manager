@@ -1,4 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { Hero } from '../../../types/hero';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +15,7 @@ import { HeroesService } from '../../services/heroes-service';
     MatIconModule,
     NgOptimizedImage,
   ],
-  providers: [provideImgixLoader('https://picsum.dev/'),],
+  providers: [provideImgixLoader('https://picsum.photos/'),],
   templateUrl: './hero-card.html',
   styleUrl: './hero-card.scss'
 })

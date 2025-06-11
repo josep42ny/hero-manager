@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class DeletionDialog {
 
-  private readonly dialogRef = inject(MatDialogRef);
+  private readonly dialogRef = inject(MatDialogRef<DeletionDialog>);
 
   public confirm(): void {
     this.dialogRef.close(true);

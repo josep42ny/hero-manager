@@ -1,14 +1,12 @@
+@use '../../styles/mixins' as *;
+
 .c-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
 
   &__actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    @include flex(space-between, center, $wrap: wrap, $gap: 1rem);
     margin-top: 1rem;
 
     &--full-width {
@@ -26,7 +24,5 @@
 }
 
 .c-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(space-between, center);
 }

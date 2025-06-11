@@ -23,7 +23,7 @@ import { AsyncPipe } from '@angular/common';
 export class HeroList implements OnInit {
 
   public heroes: Observable<Hero[]> = new Observable();
-  private readonly heroesService = inject(HeroesService);
+  private readonly heroesService: HeroesService = inject(HeroesService);
 
   ngOnInit(): void {
     this.heroes = this.heroesService.heroesObservable();

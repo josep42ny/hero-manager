@@ -1,9 +1,7 @@
 @use '../../styles/mixins' as *;
 
 :host {
-  @include flex(center, center);
-  flex-wrap: wrap;
-  gap: 1rem;
+  @include flex(center, center, $wrap: wrap, $gap: 1rem);
   margin-top: 1rem;
 }
 
