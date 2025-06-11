@@ -1,26 +1,26 @@
 <mat-card class="c-card" appearance="raised">
 
-    <img mat-card-image class="c-card__image" src="{{hero().imageUrl}}" alt="Photo of a superhero">
+  <img mat-card-image class="c-card__image" [src]="hero().imageUrl" alt="Photo of a superhero">
 
-    <mat-card-header>
-        <mat-card-title>
-            {{hero().name | titlecase}}
-        </mat-card-title>
-        <mat-card-subtitle>
-            {{hero().powers}}
-        </mat-card-subtitle>
-    </mat-card-header>
+  <mat-card-header>
+    <mat-card-title>
+      {{hero().name | titlecase}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{hero().powers}}
+    </mat-card-subtitle>
+  </mat-card-header>
 
-    <mat-card-content class="c-card__content">
-        <p class="c-card__content-description">{{hero().description}}</p>
-        <button mat-button class="c-card__content-loacion" disabled><mat-icon>location_on</mat-icon>
-            {{hero().location}}</button>
-    </mat-card-content>
+  <mat-card-content class="c-card__content">
+    <p class="c-card__content-description">{{hero().description}}</p>
+    <button mat-button class="c-card__content-loacion" disabled><mat-icon>location_on</mat-icon>
+      {{hero().location}}</button>
+  </mat-card-content>
 
-    <mat-card-actions align="end">
-        <button mat-button data-testid="delButton" (click)="onDeleteClick()">Eliminar</button>
-        <button mat-flat-button data-testid="editButton" (click)="onEditClick()"><mat-icon>edit</mat-icon>
-            Editar</button>
-    </mat-card-actions>
+  <mat-card-actions align="end">
+    <button mat-button data-testid="delButton" (click)="onDeleteClick()">Eliminar</button>
+    <button mat-flat-button data-testid="editButton" (click)="onEditClick()"><mat-icon>edit</mat-icon>
+      Editar</button>
+  </mat-card-actions>
 
 </mat-card>

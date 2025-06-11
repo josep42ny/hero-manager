@@ -1,4 +1,4 @@
-import { DestroyRef, inject, Injectable } from '@angular/core';
+import { DestroyRef, inject, Injectable, OnInit } from '@angular/core';
 import { Hero } from '../../types/hero';
 import { HttpService } from './http-service';
 import { MatDialog, } from '@angular/material/dialog';
@@ -32,7 +32,6 @@ export class HeroesService {
     const params = new HttpParams().set('name_like', name ?? '');
 
     this.http.getHeroes(params)
-      .pipe(takeUntilDestroyed(this.destroy))
       .subscribe((heroes) => {
         this.heroes.next(heroes);
       });
@@ -40,7 +39,6 @@ export class HeroesService {
 
   private updateHerosAndShowMessage(message: string): void {
     this.http.getHeroes()
-      .pipe(takeUntilDestroyed(this.destroy))
       .subscribe((heroes) => {
         this.heroes.next(heroes);
         this.infoBar.open(message, "", {
@@ -83,7 +81,6 @@ export class HeroesService {
 
   private deleteHero(heroId: number): void {
     this.http.deleteHero(heroId)
-      .pipe(takeUntilDestroyed(this.destroy))
       .subscribe(() => {
         this.updateHerosAndShowMessage("Este héroe se ha eliminado");
       });
@@ -91,7 +88,6 @@ export class HeroesService {
 
   private editHero(hero: Hero): void {
     this.http.updateHero(hero)
-      .pipe(takeUntilDestroyed(this.destroy))
       .subscribe(() => {
         this.updateHerosAndShowMessage('Héroe modificado con éxito');
       })
@@ -99,7 +95,6 @@ export class HeroesService {
 
   private addHero(hero: Hero): void {
     this.http.addHero(hero)
-      .pipe(takeUntilDestroyed(this.destroy))
       .subscribe(() => {
         this.updateHerosAndShowMessage('Héroe creado con éxito');
       })

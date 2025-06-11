@@ -4,4 +4,8 @@
   @include bgPattern();
   height: 8rem;
   padding: 2rem 2rem;
+
+  &__image {
+    width: 9.375rem;
+  }
 }

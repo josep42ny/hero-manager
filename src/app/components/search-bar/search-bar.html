@@ -1,4 +1,4 @@
-<form class="c-search" [formGroup]="form" (ngSubmit)="submit()">
+<form class="c-search" [formGroup]="form" (input)="onInput()" (ngSubmit)="submit()">
   <mat-form-field class="c-search__bar" subscriptSizing="dynamic" appearance="outline">
     <mat-label>Busca un héroe</mat-label>
     <input matInput type="search" placeholder="Busca un héroe" formControlName="query">

@@ -1,7 +1,7 @@
 <app-search-bar (onSearch)="filterHeroes($event)"></app-search-bar>
 
 <div class="c-list">
-  @for (hero of heroes(); track hero.id) {
+  @for (hero of heroes | async; track hero.id) {
   <app-hero-card [hero]="hero" />
   } @empty {
   <div class="c-not-found">

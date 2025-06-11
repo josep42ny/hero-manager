@@ -2,11 +2,12 @@ import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { Hero } from '../../../types/hero';
 import { MatIconModule } from '@angular/material/icon';
 import { HeroesService } from '../../services/heroes-service';
-import { delay } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HeroCard } from '../hero-card/hero-card';
 import { SearchBar } from '../search-bar/search-bar';
 import { HttpParams } from '@angular/common/http';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-hero-list',
@@ -14,30 +15,21 @@ import { HttpParams } from '@angular/common/http';
     HeroCard,
     MatIconModule,
     SearchBar,
+    AsyncPipe,
   ],
   templateUrl: './hero-list.html',
   styleUrl: './hero-list.scss'
 })
 export class HeroList implements OnInit {
 
-  protected heroes = signal<Hero[]>([]);
+  public heroes: Observable<Hero[]> = new Observable();
   private readonly heroesService = inject(HeroesService);
-  private readonly destroy = inject(DestroyRef);
 
   ngOnInit(): void {
-    this.listenToHeroes();
+    this.heroes = this.heroesService.heroesObservable();
   }
 
-  private listenToHeroes(): void {
-    this.heroesService.heroesObservable()
-      .pipe(delay(0))
-      .pipe(takeUntilDestroyed(this.destroy))
-      .subscribe(heroes =>
-        this.heroes.set(heroes)
-      );
-  }
-
-  protected filterHeroes(name: string): void {
+  public filterHeroes(name: string): void {
     this.heroesService.updateHeroes(name);
   }
 

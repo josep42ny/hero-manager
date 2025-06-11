@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -22,16 +22,16 @@ import { Hero } from '../../../types/hero';
   templateUrl: './add-edit-dialog.html',
   styleUrl: './add-edit-dialog.scss'
 })
-export class AddEditDialog {
+export class AddEditDialog implements OnInit {
 
-  public form: FormGroup;
+  public form: FormGroup = new FormGroup({});
   public isEditing = computed<boolean>(() => !!this.data);
   private readonly URL_REGEX: RegExp = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
   private readonly dialogRef = inject(MatDialogRef<AddEditDialog>);
   private readonly formBuilder = inject(FormBuilder);
-  private readonly data = inject<Hero | null>(MAT_DIALOG_DATA);
+  private readonly data = inject<Hero>(MAT_DIALOG_DATA);
 
-  constructor() {
+  ngOnInit(): void {
     this.form = this.formBuilder.nonNullable.group({
       id: [this.data?.id],
       name: [this.data?.name, Validators.required],
@@ -43,7 +43,7 @@ export class AddEditDialog {
     });
   }
 
-  protected submit(): void {
+  public submit(): void {
     const result: any = this.form.value;
     if (!this.isEditing()) {
       delete result.id;

@@ -17,11 +17,11 @@ export class DeletionDialog {
 
   private readonly dialogRef = inject(MatDialogRef);
 
-  protected confirm(): void {
+  public confirm(): void {
     this.dialogRef.close(true);
   }
 
-  protected dismiss(): void {
+  public dismiss(): void {
     this.dialogRef.close(false);
   }
 
